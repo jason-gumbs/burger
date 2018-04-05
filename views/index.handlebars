@@ -1,0 +1,34 @@
+<div class= "container">
+</br>
+</br>
+<h1>EAT-A-BURRGER</h1>
+<form class="create-form">
+
+  
+<div class="form-group">
+   
+   <div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  </div>
+  <input type="text"  id="burg"class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+  <button class="create-burger" type="submit">Submit</button>
+  
+</form>
+<label for="exampleFormControlTextarea1">Enter the type of burger you want to eat then click submit button</label>
+</div>
+<div>
+
+
+  <ul>
+  {{#each burger}}
+   
+      {{>burger-block}}
+   
+  {{/each}}
+</ul>
+</div>
+
+
