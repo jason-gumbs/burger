@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require('method-override');
 
 
 var PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 // Set Handlebars.
+app.use(methodOverride('_method'));
 
 var exphbs = require("express-handlebars");
 
@@ -24,7 +26,7 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 
 var routes = require("./controllers/burgers_Controller.js");
-app.use( routes);
+app.use("/", routes);
 // Start our server so that it can begin listening to client requests.
 
 app.listen(PORT, function() {
